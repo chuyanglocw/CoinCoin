@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1724544668
+icon.svg::CompressedTexture2D::4703207441010588149::1724544553::1724544560::1::::<><>::
+::res://scenes/::1724544679
+menu.tscn::PackedScene::9208876976761573450::1724544669::0::1::::<><>::
+game.tscn::PackedScene::5422049181657403348::1724544679::0::1::::<><>::
+::res://scripts/::1724544629
+::res://sprites/::1724544797
+collection.png::CompressedTexture2D::1657804003235201681::1724544797::1724544797::1::::<><>::
+minecart_body.png::CompressedTexture2D::2604236654407903351::1724544797::1724544797::1::::<><>::
+minecart_wheel.png::CompressedTexture2D::6073308357885401864::1724544797::1724544797::1::::<><>::
+none.png::CompressedTexture2D::8966610402051972201::1724544797::1724544797::1::::<><>::
+protection.png::CompressedTexture2D::2832357459281224947::1724544797::1724544797::1::::<><>::
+thumb_down.png::CompressedTexture2D::2703737328126518577::1724544797::1724544797::1::::<><>::
+thumb_up.png::CompressedTexture2D::5212358791381017770::1724544797::1724544797::1::::<><>::
