@@ -2,3 +2,11 @@ res://scenes/menu.tscn
 res://scripts/minecart.gd
 res://scenes/minecart.tscn
 res://scenes/game.tscn
+res://scenes/items.tscn
+res://scripts/coin.gd
+res://scenes/coin.tscn
+res://scripts/item.gd
+res://scenes/thump_down.tscn
+res://scenes/thum_up.tscn
+res://scenes/protection.tscn
+res://scenes/collection.tscn

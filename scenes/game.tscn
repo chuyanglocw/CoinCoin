@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjiqmfw7vwagi"]
+[gd_scene load_steps=4 format=3 uid="uid://cjiqmfw7vwagi"]
 
 [ext_resource type="PackedScene" uid="uid://cs08oidcho0kl" path="res://scenes/minecart.tscn" id="1_0h72t"]
+[ext_resource type="PackedScene" uid="uid://bowt54kqoybrj" path="res://scenes/protection.tscn" id="2_brubv"]
+[ext_resource type="PackedScene" uid="uid://cm2uilwvrii5n" path="res://scenes/coin.tscn" id="2_yhan0"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Minecart" parent="." instance=ExtResource("1_0h72t")]
 position = Vector2(157, 345)
+
+[node name="Protection" parent="Minecart" instance=ExtResource("2_brubv")]
+
+[node name="Coin" parent="." instance=ExtResource("2_yhan0")]
+position = Vector2(160, 33)

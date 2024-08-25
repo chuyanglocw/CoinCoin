@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bowt54kqoybrj"]
+
+[ext_resource type="PackedScene" uid="uid://c4qokqlwsu14u" path="res://scenes/items.tscn" id="1_t4hdq"]
+[ext_resource type="Texture2D" uid="uid://bgmarpwilryvr" path="res://sprites/protection.png" id="2_c3dhw"]
+
+[node name="Protection" instance=ExtResource("1_t4hdq")]
+falling_speed = 0
+type = "protection"
+can_be_collised_by_minecart = false
+
+[node name="Protection" type="Sprite2D" parent="." index="1"]
+position = Vector2(0, -27)
+scale = Vector2(1, 0.164063)
+texture = ExtResource("2_c3dhw")
