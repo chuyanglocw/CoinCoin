@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://d4g34gjrn4ms5"]
+[gd_scene load_steps=7 format=3 uid="uid://d4g34gjrn4ms5"]
+
+[ext_resource type="PackedScene" uid="uid://oolnqc4httk" path="res://scenes/collection.tscn" id="1_eq6yy"]
+[ext_resource type="PackedScene" uid="uid://cm2uilwvrii5n" path="res://scenes/coin.tscn" id="2_npcfa"]
+[ext_resource type="PackedScene" uid="uid://bowt54kqoybrj" path="res://scenes/protection.tscn" id="3_m3gxw"]
+[ext_resource type="PackedScene" uid="uid://dlm7yw0fcafsb" path="res://scenes/thumb_down.tscn" id="4_xui3n"]
+[ext_resource type="PackedScene" uid="uid://i8l6vgu3f1tv" path="res://scenes/thumb_up.tscn" id="5_1kiqm"]
+[ext_resource type="PackedScene" uid="uid://cs08oidcho0kl" path="res://scenes/minecart.tscn" id="6_oghcv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +14,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Collection" parent="." instance=ExtResource("1_eq6yy")]
+position = Vector2(361, 365)
+
+[node name="Coin" parent="." instance=ExtResource("2_npcfa")]
+position = Vector2(270, 453)
+
+[node name="Protection" parent="." instance=ExtResource("3_m3gxw")]
+position = Vector2(434, 455)
+
+[node name="ThumpDown" parent="." instance=ExtResource("4_xui3n")]
+position = Vector2(515, 479)
+
+[node name="ThumUp" parent="." instance=ExtResource("5_1kiqm")]
+position = Vector2(566, 466)
+
+[node name="Minecart" parent="." instance=ExtResource("6_oghcv")]
+position = Vector2(394, 520)

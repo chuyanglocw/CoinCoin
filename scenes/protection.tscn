@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bgmarpwilryvr" path="res://sprites/protection.png" id="2_c3dhw"]
 
 [node name="Protection" instance=ExtResource("1_t4hdq")]
-falling_speed = 0
+falling_speed = 4.0
 type = "protection"
 can_be_collised_by_minecart = false
+limit_height = 10
 
 [node name="Protection" type="Sprite2D" parent="." index="1"]
 position = Vector2(0, -27)

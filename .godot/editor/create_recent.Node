@@ -1,3 +1,12 @@
+Node2D
+Panel
+Control
+CanvasLayer
+Label
+Item
+Timer
+Sprite2D
+ShapeCast2D
 Area2D
 RayCast2D
 CollisionShape2D

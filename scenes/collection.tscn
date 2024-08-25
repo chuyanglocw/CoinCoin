@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://xvb136mcg314" path="res://sprites/collection.png" id="2_jjta5"]
 
 [node name="Collection" instance=ExtResource("1_hwys0")]
-scale = Vector2(0.5, 0.5)
 type = "collection"
+can_ignore_protection = true
 
 [node name="Collection" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_jjta5")

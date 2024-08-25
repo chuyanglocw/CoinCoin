@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://sel68f7bqh3j"]
+
+[ext_resource type="Texture2D" uid="uid://cj23a5moutvs5" path="res://sprites/alpha_0.png" id="1_pbqhr"]
+[ext_resource type="Script" path="res://scripts/items_area.gd" id="2_0pb60"]
+
+[node name="ItemsArea" type="Sprite2D" node_paths=PackedStringArray("timer")]
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_pbqhr")
+script = ExtResource("2_0pb60")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true

@@ -17,16 +17,31 @@ boot_splash/bg_color=Color(0.899123, 0.905866, 0.899897, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://sprites/coincoin_background.png"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
 window/stretch/mode="viewport"
+window/main_scene="res://scenes/menu.tscn"
+window/canvas_textures/default_texture_filter=1
+window/bg_color=Color(0.14, 0.14, 0.14, 1)
+window/fullsize=true
+window/use_filter=true
+window/show_image=true
+
+[input]
+
+clicked={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(290, 36),"global_position":Vector2(299, 82),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

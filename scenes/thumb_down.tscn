@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlm7yw0fcafsb"]
+
+[ext_resource type="PackedScene" uid="uid://c4qokqlwsu14u" path="res://scenes/items.tscn" id="1_nc0nn"]
+[ext_resource type="Texture2D" uid="uid://beryfnsopettp" path="res://sprites/thumb_down.png" id="2_kmxhh"]
+
+[node name="ThumpDown" instance=ExtResource("1_nc0nn")]
+type = "thumb_down"
+
+[node name="ThumbDown" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kmxhh")

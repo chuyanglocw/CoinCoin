@@ -1,15 +1,126 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjiqmfw7vwagi"]
+[gd_scene load_steps=7 format=3 uid="uid://cjiqmfw7vwagi"]
 
 [ext_resource type="PackedScene" uid="uid://cs08oidcho0kl" path="res://scenes/minecart.tscn" id="1_0h72t"]
-[ext_resource type="PackedScene" uid="uid://bowt54kqoybrj" path="res://scenes/protection.tscn" id="2_brubv"]
-[ext_resource type="PackedScene" uid="uid://cm2uilwvrii5n" path="res://scenes/coin.tscn" id="2_yhan0"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_gj2mw"]
+[ext_resource type="PackedScene" uid="uid://sel68f7bqh3j" path="res://scenes/items_area.tscn" id="2_1vplr"]
+[ext_resource type="Texture2D" uid="uid://cyunmsnfy2g01" path="res://sprites/coincoin_background.png" id="2_ll1q4"]
+[ext_resource type="FontFile" uid="uid://bk412jb2pwws1" path="res://fonts/JinzisheBianzheng-Regular.ttf" id="2_ws13t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6yng"]
+bg_color = Color(0.5225, 0.95, 0.871625, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_gj2mw")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -306.0
+offset_top = 15.0
+offset_right = -36.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6yng")
+
+[node name="Label" type="Label" parent="UI/Control/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0185185
+anchor_top = -0.192308
+anchor_right = 0.985185
+anchor_bottom = 1.13462
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ws13t")
+theme_override_font_sizes/font_size = 50
+text = "分数：0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -767.0
+offset_top = 11.0
+offset_right = -497.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6yng")
+
+[node name="Label" type="Label" parent="UI/Control/Panel2"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0185185
+anchor_top = -0.192308
+anchor_right = 0.985185
+anchor_bottom = 1.13462
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ws13t")
+theme_override_font_sizes/font_size = 50
+text = "生命：3"
+metadata/_edit_use_anchors_ = true
+
+[node name="CoincoinBackground" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("2_ll1q4")
 
 [node name="Minecart" parent="." instance=ExtResource("1_0h72t")]
-position = Vector2(157, 345)
+position = Vector2(323, 553)
+scale = Vector2(2, 2)
+speed = 500
 
-[node name="Protection" parent="Minecart" instance=ExtResource("2_brubv")]
+[node name="Areas" type="Node2D" parent="."]
 
-[node name="Coin" parent="." instance=ExtResource("2_yhan0")]
-position = Vector2(160, 33)
+[node name="Coins" parent="Areas" node_paths=PackedStringArray("spawn_node") instance=ExtResource("2_1vplr")]
+position = Vector2(576.5, 1)
+scale = Vector2(71.5625, 0.141643)
+spawn_node = NodePath("../../items")
+
+[node name="ThumbUps" parent="Areas" node_paths=PackedStringArray("spawn_node") instance=ExtResource("2_1vplr")]
+position = Vector2(400, 0)
+scale = Vector2(50, 0.5)
+type = 1
+spawn_node = NodePath("../../items")
+spread = 0.065
+max_item_count = 2
+
+[node name="ThumbDowns" parent="Areas" node_paths=PackedStringArray("spawn_node") instance=ExtResource("2_1vplr")]
+position = Vector2(400, 0)
+scale = Vector2(50, 0.5)
+type = 2
+spawn_node = NodePath("../../items")
+spread = 0.365
+born_once = 2
+
+[node name="Collections" parent="Areas" node_paths=PackedStringArray("spawn_node") instance=ExtResource("2_1vplr")]
+position = Vector2(400, 0)
+scale = Vector2(50, 0.5)
+type = 3
+spawn_node = NodePath("../../items")
+spread = 0.075
+max_item_count = 2
+
+[node name="items" type="Node2D" parent="."]
+
+[connection signal="deal_with" from="Areas/Coins" to="." method="_on_items_area_deal_with"]
+[connection signal="deal_with" from="Areas/ThumbUps" to="." method="_on_items_area_deal_with"]
+[connection signal="deal_with" from="Areas/ThumbDowns" to="." method="_on_items_area_deal_with"]
+[connection signal="deal_with" from="Areas/Collections" to="." method="_on_items_area_deal_with"]
